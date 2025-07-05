@@ -5,6 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact</title>
   <link rel="stylesheet" href="stylex.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-header {
+      background-color: #0077b6;
+      padding: 15px;
+    }
+
+    .navbar .nav-menu {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-menu li {
+      margin: 0 20px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    main h1 {
+      color: #0077b6;
+      text-align: center;
+    }
+
+    main p, main li {
+      line-height: 1.6;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+    }
+
+    .contact-info ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-info li {
+      margin-bottom: 10px;
+    }
+
+    .contact-form {
+      margin-top: 30px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #005f87;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,8 +109,32 @@
   </header>
 
   <main>
-    <h1>Contact</h1>
-    <p>Feel free to reach out via email or social media.</p>
+    <h1>Contact Me</h1>
+    <p>If you have any questions, feedback, or just want to say hi — feel free to reach out!</p>
+
+    <div class="contact-info">
+      <ul>
+        <li><strong>📞 Phone:</strong> +92 306 4793936</li>
+        <li><strong>📧 Email:</strong> <a href="mailto:hisham.khawar2011@gmail.com">hisham.khawar2011@gmail.com</a></li>
+        <li><strong>📱 Instagram:</strong> <a href="https://www.instagram.com/hisham.k11" target="_blank">@hisham.k11</a></li>
+      </ul>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </main>
 
   <script src="reyaan.js"></script>
