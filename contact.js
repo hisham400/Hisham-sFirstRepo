@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("contactMessages", JSON.stringify(messages));
   
         alert("✅ Your message has been saved locally!");
-  
+        console.log(formData)
         form.reset(); // Clear form after saving
       } else {
         alert("⚠️ Please fill out all fields.");
