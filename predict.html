@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EPL Predictions</title>
+  <link rel="stylesheet" href="predict.css" />
+</head>
+<body>
+
+  <header class="main-header">
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="epl.html">EPL</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="predict.html">Predict</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>EPL Predictions</h1>
+
+    <form id="predictionForm">
+      
+      <label for="winner">🏆 Who will win the league?</label>
+      <input type="text" id="winner" name="winner" required />
+
+      <label for="top4">🔝 Top 4 teams (separate with commas)</label>
+      <input 
+        type="text" 
+        id="top4" 
+        name="top4" 
+        placeholder="e.g. Man City, Arsenal, Liverpool, Chelsea" 
+        required 
+      />
+
+      <label for="relegated">🔻 Relegated teams (separate with commas)</label>
+      <input 
+        type="text" 
+        id="relegated" 
+        name="relegated" 
+        placeholder="e.g. Luton, Burnley, Forest" 
+        required 
+      />
+
+      <label for="topScorer">⚽ Top Scorer</label>
+      <input type="text" id="topScorer" name="topScorer" required />
+
+      <button type="submit">Submit Prediction</button>
+    </form>
+
+    <div class="output" id="result" style="display:none;"></div>
+  </main>
+
+  <script src="predict.js"></script>
+</body>
+</html>
+
