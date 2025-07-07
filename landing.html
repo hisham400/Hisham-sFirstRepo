@@ -4,69 +4,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EPL Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url('landing.webp') no-repeat center center/cover;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .main-header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 15px 30px;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .nav-menu li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-menu li a:hover {
+      color: #ffcc00;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .landing-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .landing-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .landing-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    .landing-content a.button {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .landing-content a.button:hover {
+      background-color: #e6b800;
+    }
+  </style>
 </head>
-<body style="margin: 0; font-family: Arial, sans-serif;">
+<body>
 
   <header class="main-header">
     <nav class="navbar">
       <ul class="nav-menu">
+        <li><a href="landing.html">Landing Page</a></li>
         <li><a href="Home.html">Home</a></li>
         <li><a href="epl.html">EPL</a></li>
         <li><a href="rules.html">Rules</a></li>
         <li><a href="predict.html">Predict</a></li>
         <li><a href="Contact.html">Contact</a></li>
-        <li><a href="landing.html">Landing Page</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Landing Section with Background Image -->
-  <div style="
-    background: url('pl.jpeg') no-repeat center center / cover;
-    height: 100vh;
-    background-repeat: no-repeat;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-  ">
-    <!-- Dark overlay -->
-    <div style="
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-    "></div>
+  <div class="overlay"></div>
 
-    <!-- Content -->
-    <div style="position: relative; z-index: 1; max-width: 600px; padding: 20px;">
-      <h1 style="font-size: 3rem; margin-bottom: 20px;">Welcome to the Premier League</h1>
-      <p style="font-size: 1.2rem; margin-bottom: 30px;">
-        Follow your favorite clubs, players, scores, and highlights all in one place.
-      </p>
-
-      <!-- Back to Home Button -->
-      <a href="Home.html" style="
-        background-color: #555;
-        color: white;
-        padding: 12px 24px;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 5px;
-        transition: background 0.3s ease;
-        display: inline-block;
-        margin-top: 15px;
-      " onmouseover="this.style.backgroundColor='#777'" onmouseout="this.style.backgroundColor='#555'">
-        Back to Home
-      </a>
-    </div>
+  <div class="landing-content">
+    <h1>Welcome to the Premier League</h1>
+    <p>Follow your favorite clubs, players, scores, and highlights — all in one place.</p>
+    <a href="Home.html" class="button">Go to Home</a>
   </div>
 
 </body>
 </html>
-
 

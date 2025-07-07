@@ -8,55 +8,68 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
       color: #333;
       margin: 0;
       padding: 0;
     }
 
     .main-header {
-      background-color: #0077b6;
-      padding: 15px;
+      background-color: #001f3f;
+      padding: 15px 0;
     }
 
     .navbar .nav-menu {
       list-style: none;
       display: flex;
       justify-content: center;
-      padding: 0;
+      align-items: center;
       margin: 0;
+      padding: 0;
+      gap: 30px;
     }
 
-    .nav-menu li {
-      margin: 0 20px;
-    }
-
-    .nav-menu a {
+    .nav-menu li a {
       text-decoration: none;
       color: white;
       font-weight: bold;
+      font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-menu li a:hover {
+      background-color: #0077b6;
+      color: #fff200;
     }
 
     main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 850px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
     main h1 {
-      color: #0077b6;
       text-align: center;
+      color: #0077b6;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
     }
 
-    main p, main li {
-      line-height: 1.6;
+    main h2 {
+      color: #0096c7;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
 
-    .contact-info {
-      margin-top: 20px;
+    main p {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
     }
 
     .contact-info ul {
@@ -65,30 +78,45 @@
     }
 
     .contact-info li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-size: 1.05rem;
     }
 
-    .contact-form {
-      margin-top: 30px;
+    .contact-info a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-form label {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 10px;
+      padding: 12px;
+      margin-top: 8px;
       margin-bottom: 20px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-size: 1rem;
     }
 
     .contact-form button {
       background-color: #0077b6;
       color: white;
       border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 6px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     .contact-form button:hover {
@@ -100,16 +128,15 @@
   <header class="main-header">
     <nav class="navbar">
       <ul class="nav-menu">
+        <li><a href="landing.html">Landing Page</a></li>
         <li><a href="Home.html">Home</a></li>
         <li><a href="epl.html">EPL</a></li>
         <li><a href="rules.html">Rules</a></li>
         <li><a href="predict.html">Predict</a></li>
         <li><a href="Contact.html">Contact</a></li>
-        <li><a href="landing.html">Landing Page</a></li>
       </ul>
     </nav>
   </header>
-
   
   <main>
     <h1>Contact Me</h1>
