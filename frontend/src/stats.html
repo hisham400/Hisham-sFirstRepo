@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>All-Time Premier League Stats</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f7f7;
       margin: 0;
       padding: 0;
     }
 
+    /* HEADER NAVBAR */
     .main-header {
       background-color: #001f3f;
       padding: 15px 0;
@@ -42,54 +43,83 @@
       color: #fff200;
     }
 
-    main {
+    /* TILES */
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px;
+      padding: 30px 20px;
       max-width: 1000px;
-      margin: 40px auto;
-      padding: 30px;
-      background-color: #e9f5e1; /* Changed from white to light green */
-      border-radius: 10px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      margin: auto;
     }
 
-    h1, h2 {
-      color: #0077b6;
+    .tile {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
-    h3 {
-      color: #023e8a;
-      margin-top: 25px;
+    .tile:hover {
+      transform: scale(1.05);
     }
 
-    ul {
-      margin-bottom: 20px;
-      padding-left: 20px;
+    .tile .icon {
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
-    ul li {
-      margin-bottom: 8px;
+    /* LEADERBOARD */
+    .leaderboard {
+      max-width: 1000px;
+      margin: 20px auto 40px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow-x: auto;
+      display: none;
     }
 
-    details {
-      margin-top: 15px;
-      background-color: #fff;
+    .leaderboard h2 {
+      margin: 20px;
+      color: #001f3f;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
       padding: 12px;
-      border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background: #e0f7fa;
       cursor: pointer;
     }
 
-    summary {
-      font-weight: bold;
-      font-size: 1.1rem;
+    main h1 {
+      text-align: center;
+      color: #0077b6;
+      padding-top: 30px;
     }
 
-    summary:hover {
-      color: #0077b6;
+    @media screen and (max-width: 600px) {
+      .tiles {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER NAVIGATION -->
   <header class="main-header">
     <nav class="navbar">
       <ul class="nav-menu">
@@ -106,87 +136,143 @@
     </nav>
   </header>
 
-  
   <main>
     <h1>All-Time Premier League Stats</h1>
 
-    <details open>
-      <summary>⚽ Top Goal Scorers</summary>
-      <ul>
-        <li>Alan Shearer – 260 goals</li>
-        <li>Wayne Rooney – 208 goals</li>
-        <li>Andy Cole – 187 goals</li>
-        <li>Frank Lampard – 177 goals</li>
-        <li>Thierry Henry – 175 goals</li>
-      </ul>
-    </details>
+    <!-- STATISTIC TILES -->
+    <div class="tiles">
+      <div class="tile" onclick="show('goals')"><div class="icon">⚽</div><div>Top Goal Scorers</div></div>
+      <div class="tile" onclick="show('appearances')"><div class="icon">🎽</div><div>Most Appearances</div></div>
+      <div class="tile" onclick="show('assists')"><div class="icon">🎯</div><div>Most Assists</div></div>
+      <div class="tile" onclick="show('titles')"><div class="icon">🏆</div><div>Clubs by Titles</div></div>
+      <div class="tile" onclick="show('points')"><div class="icon">📊</div><div>Most Points</div></div>
+      <div class="tile" onclick="show('goals_club')"><div class="icon">🥅</div><div>Club Goals</div></div>
+      <div class="tile" onclick="show('records')"><div class="icon">📌</div><div>Notable Records</div></div>
+    </div>
 
-    <details>
-      <summary>🎽 Most Appearances</summary>
-      <ul>
-        <li>Gareth Barry – 653 appearances</li>
-        <li>Ryan Giggs – 632 appearances</li>
-        <li>Frank Lampard – 609 appearances</li>
-        <li>David James – 572 appearances</li>
-        <li>James Milner – 571 appearances</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>🎯 Most Assists</summary>
-      <ul>
-        <li>Ryan Giggs – 162 assists</li>
-        <li>Cesc Fàbregas – 111 assists</li>
-        <li>Wayne Rooney – 103 assists</li>
-        <li>Frank Lampard – 102 assists</li>
-        <li>Thierry Henry – 98 assists</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>🏆 Clubs with Most Titles</summary>
-      <ul>
-        <li>Manchester United – 13 titles</li>
-        <li>Manchester City – 7 titles</li>
-        <li>Chelsea – 6 titles</li>
-        <li>Arsenal – 3 titles</li>
-        <li>Blackburn Rovers – 1 title</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>📊 Most Points Accumulated</summary>
-      <ul>
-        <li>Manchester United – 2,425 points</li>
-        <li>Arsenal – 2,144 points</li>
-        <li>Chelsea – 2,091 points</li>
-        <li>Liverpool – 2,044 points</li>
-        <li>Tottenham Hotspur – 1,944 points</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>🥅 Most Goals Scored</summary>
-      <ul>
-        <li>Manchester United – 2,233 goals</li>
-        <li>Arsenal – 2,114 goals</li>
-        <li>Chelsea – 2,044 goals</li>
-        <li>Liverpool – 1,987 goals</li>
-        <li>Tottenham Hotspur – 1,864 goals</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>📌 Notable Records</summary>
-      <ul>
-        <li>Longest Unbeaten Streak: Arsenal – 49 games (2003-2004, Invincibles)</li>
-        <li>Most Consecutive Wins: Manchester City – 21 games (2017-2018)</li>
-        <li>Most Consecutive Losses: Sunderland – 15 games (2002-2003)</li>
-      </ul>
-    </details>
+    <!-- LEADERBOARD PANEL -->
+    <div id="leaderboard" class="leaderboard">
+      <h2 id="board-title"></h2>
+      <table id="board-table">
+        <thead><tr></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
   </main>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const data = {
+      goals: {
+        title: 'Top Goal Scorers',
+        headers: ['Player', 'Goals'],
+        rows: [
+          ['Alan Shearer', 260],
+          ['Wayne Rooney', 208],
+          ['Andy Cole', 187],
+          ['Frank Lampard', 177],
+          ['Thierry Henry', 175]
+        ]
+      },
+      appearances: {
+        title: 'Most Appearances',
+        headers: ['Player', 'Appearances'],
+        rows: [
+          ['Gareth Barry', 653],
+          ['Ryan Giggs', 632],
+          ['Frank Lampard', 609],
+          ['David James', 572],
+          ['James Milner', 571]
+        ]
+      },
+      assists: {
+        title: 'Most Assists',
+        headers: ['Player', 'Assists'],
+        rows: [
+          ['Ryan Giggs', 162],
+          ['Cesc Fàbregas', 111],
+          ['Wayne Rooney', 103],
+          ['Frank Lampard', 102],
+          ['Thierry Henry', 98]
+        ]
+      },
+      titles: {
+        title: 'Clubs with Most Titles',
+        headers: ['Club', 'Titles'],
+        rows: [
+          ['Manchester United', 13],
+          ['Manchester City', 7],
+          ['Chelsea', 6],
+          ['Arsenal', 3],
+          ['Blackburn Rovers', 1]
+        ]
+      },
+      points: {
+        title: 'Most Points Accumulated',
+        headers: ['Club', 'Points'],
+        rows: [
+          ['Manchester United', 2425],
+          ['Arsenal', 2144],
+          ['Chelsea', 2091],
+          ['Liverpool', 2044],
+          ['Tottenham Hotspur', 1944]
+        ]
+      },
+      goals_club: {
+        title: 'Most Goals by Club',
+        headers: ['Club', 'Goals'],
+        rows: [
+          ['Manchester United', 2233],
+          ['Arsenal', 2114],
+          ['Chelsea', 2044],
+          ['Liverpool', 1987],
+          ['Tottenham Hotspur', 1864]
+        ]
+      },
+      records: {
+        title: 'Notable Records',
+        headers: ['Record', 'Value'],
+        rows: [
+          ['Longest Unbeaten Streak', 'Arsenal – 49 games (2003–2004)'],
+          ['Most Consecutive Wins', 'Manchester City – 21 (2017–2018)'],
+          ['Most Consecutive Losses', 'Sunderland – 15 (2002–2003)']
+        ]
+      }
+    };
+
+    function show(key) {
+      let info = data[key];
+      document.getElementById('board-title').textContent = info.title;
+
+      // Headers
+      let thead = document.querySelector('#board-table thead tr');
+      thead.innerHTML = '';
+      info.headers.forEach(h => {
+        const th = document.createElement('th');
+        th.textContent = h;
+        thead.appendChild(th);
+      });
+
+      // Rows
+      let tbody = document.querySelector('#board-table tbody');
+      tbody.innerHTML = '';
+      info.rows.forEach(row => {
+        const tr = document.createElement('tr');
+        row.forEach(cell => {
+          const td = document.createElement('td');
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      // Show and scroll
+      document.getElementById('leaderboard').style.display = 'block';
+      window.scrollTo({
+        top: document.getElementById('leaderboard').offsetTop - 20,
+        behavior: 'smooth'
+      });
+    }
+  </script>
 </body>
 </html>
-
-
-
