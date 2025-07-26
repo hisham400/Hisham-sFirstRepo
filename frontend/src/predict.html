@@ -74,12 +74,9 @@
       border-radius: 6px;
     }
 
-    button[type="submit"] {
-      margin-top: 30px;
-      width: 100%;
+    button {
+      margin-top: 20px;
       padding: 12px;
-      background-color: #0077b6;
-      color: white;
       font-size: 1rem;
       border: none;
       border-radius: 6px;
@@ -87,8 +84,24 @@
       transition: background-color 0.3s ease;
     }
 
+    button[type="submit"] {
+      background-color: #0077b6;
+      color: white;
+      width: 100%;
+    }
+
     button[type="submit"]:hover {
       background-color: #005f87;
+    }
+
+    #clearPrediction {
+      background-color: #e63946;
+      color: white;
+      width: 100%;
+    }
+
+    #clearPrediction:hover {
+      background-color: #c30000;
     }
 
     .output {
@@ -97,6 +110,13 @@
       padding: 20px;
       border-radius: 10px;
       border: 1px solid #bce0fd;
+    }
+
+    .success {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -121,24 +141,44 @@
     <h1>Predict the Premier League</h1>
     <form id="predictionForm">
       <label for="winner">🏆 Who will win the league?</label>
-      <input type="text" id="winner" name="winner" placeholder="Enter team name" required>
+      <input list="teams" id="winner" name="winner" placeholder="Enter team name" required>
 
-      <label for="top4">🔝 Top 4 teams (separate with commas)</label>
+      <label for="top4">🔝 Top 4 teams (comma-separated)</label>
       <input type="text" id="top4" name="top4" placeholder="e.g. Man City, Arsenal, Liverpool, Chelsea" required>
 
-      <label for="relegated">🔻 Relegated teams (separate with commas)</label>
+      <label for="relegated">🔻 Relegated teams (comma-separated)</label>
       <input type="text" id="relegated" name="relegated" placeholder="e.g. Luton, Burnley, Forest" required>
 
       <label for="topScorer">⚽ Top Scorer</label>
-      <input type="text" id="topScorer" name="topScorer" placeholder="Enter player name" required>
+      <input list="scorers" id="topScorer" name="topScorer" placeholder="Enter player name" required>
 
       <button type="submit">Submit Prediction</button>
+      <button type="button" id="clearPrediction">Clear Prediction</button>
     </form>
 
+    <div class="success" id="successMessage" style="display: none;">🎉 Prediction Saved!</div>
+
     <div class="output" id="result" style="display: none;"></div>
+
+    <datalist id="teams">
+      <option value="Arsenal">
+      <option value="Manchester City">
+      <option value="Liverpool">
+      <option value="Chelsea">
+      <option value="Manchester United">
+      <option value="Tottenham">
+      <option value="Newcastle">
+      <option value="Aston Villa">
+    </datalist>
+
+    <datalist id="scorers">
+      <option value="Erling Haaland">
+      <option value="Mohamed Salah">
+      <option value="Harry Kane">
+      <option value="Son Heung-min">
+    </datalist>
   </main>
 
-  <!-- ✅ Correct script inclusion -->
-  <script src="predict.js"></script>
+  <script src="../script/predict.js"></script>
 </body>
 </html>
