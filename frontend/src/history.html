@@ -6,11 +6,11 @@
   <title>History of Football</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #e9f5e1;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f7ed;
       margin: 0;
       padding: 0;
-      color: #333;
+      color: #2c2c2c;
     }
 
     .main-header {
@@ -47,39 +47,97 @@
       max-width: 1000px;
       margin: 40px auto;
       padding: 30px;
-      background-color: white;
+      background-color: #ffffff;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     }
 
-    h1, h2, h3 {
-      color: #0077b6;
+    h1 {
+      color: #003366;
       text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #0077b6;
+      border-left: 5px solid #0077b6;
+      padding-left: 10px;
+      margin-top: 40px;
+    }
+
+    h3 {
+      color: #333;
       margin-top: 30px;
     }
 
     p {
-      line-height: 1.6;
+      line-height: 1.7;
       margin: 15px 0;
       text-align: justify;
     }
 
     .img-box {
       text-align: center;
-      margin: 20px 0;
+      margin: 25px 0;
     }
 
     .img-box img {
-      max-width: 100%;
+      width: 95%;
+      max-width: 600px;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     .img-box small {
       display: block;
       margin-top: 8px;
-      color: #777;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .cards-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0 20px;
+    }
+
+    .info-card {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      flex: 1 1 300px;
+      max-width: 400px;
+      transition: transform 0.3s;
+    }
+
+    .info-card:hover {
+      transform: scale(1.03);
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+      color: #007f5f;
+    }
+
+    .info-card ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .nav-menu {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -100,7 +158,6 @@
     </nav>
   </header>
 
-
   <main>
     <h1>A Dive into English Premier League Football</h1>
 
@@ -109,7 +166,7 @@
     <h3>The Early Days of Football</h3>
     <p>Modern football has ancient roots. The first team games using a ball date back over 3,000 years to Mesoamerican cultures. The Aztecs played a version called Tchatali, where the ball symbolized the sun, and losing team captains were sacrificed.</p>
     <div class="img-box">
-      <img src="../img/azertic.jpeg" alt="Aztec Football" />
+      <img src="../img/azertic.jpeg" alt="Ancient Aztec ball game" />
       <small>Ancient Aztec ball game</small>
     </div>
 
@@ -148,6 +205,35 @@
 
     <h3>4. The Premier League – League Operator</h3>
     <p>The Premier League, founded in 1992, is England’s top-tier league. It runs independently but under FA rules. It handles fixtures, broadcasting, and commercial aspects of the competition.</p>
+
+    <h2 style="text-align: center; color: #1b5e20; margin-top: 50px;">⚽ Old vs. Modern Football</h2>
+
+    <div class="cards-wrapper">
+      <!-- Old Football Box -->
+      <div class="info-card" style="background-color: #fff3e0;">
+        <h3>Old Football</h3>
+        <ul>
+          <li>⚫ Heavy leather footballs</li>
+          <li>📺 No replays or VAR</li>
+          <li>👟 Studs were metal and dangerous</li>
+          <li>📻 Radio commentary only</li>
+          <li>🏟️ Small stadiums and local fans</li>
+        </ul>
+      </div>
+
+      <!-- Modern Football Box -->
+      <div class="info-card" style="background-color: #e8f5e9;">
+        <h3>Modern Football</h3>
+        <ul>
+          <li>⚽ Lightweight synthetic balls</li>
+          <li>🖥️ VAR, Goal-line technology</li>
+          <li>👟 Safer, advanced football boots</li>
+          <li>📱 Global live streaming & apps</li>
+          <li>🏟️ Huge stadiums and worldwide fans</li>
+        </ul>
+      </div>
+    </div>
+
   </main>
 </body>
 </html>
