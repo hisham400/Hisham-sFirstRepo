@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EPL Predictions</title>
+  <title>Predict the Premier League 2025/26</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -22,21 +23,18 @@
       list-style: none;
       display: flex;
       justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
       gap: 30px;
-      margin: 0;
       padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
     }
 
     .nav-menu li a {
       text-decoration: none;
-      color: #ffffff;
+      color: white;
       font-weight: bold;
-      font-size: 1rem;
       padding: 8px 16px;
       border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
     }
 
     .nav-menu li a:hover {
@@ -48,30 +46,30 @@
       max-width: 600px;
       margin: 50px auto;
       padding: 30px;
-      background-color: white;
+      background: white;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
-    main h1 {
+    h1 {
       text-align: center;
       color: #0077b6;
-      margin-bottom: 30px;
     }
 
-    form label {
+    label {
       font-weight: bold;
-      display: block;
       margin-top: 20px;
+      display: block;
     }
 
-    form input {
+    input,
+    select {
       width: 100%;
       padding: 12px;
-      font-size: 1rem;
       margin-top: 8px;
-      border: 1px solid #ccc;
+      font-size: 1rem;
       border-radius: 6px;
+      border: 1px solid #ccc;
     }
 
     button {
@@ -81,34 +79,24 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      width: 100%;
     }
 
     button[type="submit"] {
       background-color: #0077b6;
       color: white;
-      width: 100%;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #005f87;
     }
 
     #clearPrediction {
       background-color: #e63946;
       color: white;
-      width: 100%;
-    }
-
-    #clearPrediction:hover {
-      background-color: #c30000;
     }
 
     .output {
-      margin-top: 30px;
-      background-color: #f1faff;
+      margin-top: 25px;
       padding: 20px;
       border-radius: 10px;
+      background: #f1faff;
       border: 1px solid #bce0fd;
     }
 
@@ -120,17 +108,18 @@
     }
   </style>
 </head>
+
 <body>
   <header class="main-header">
     <nav class="navbar">
       <ul class="nav-menu">
-        <li><a href="landing.html">Landing Page</a></li>
+        <li><a href="landing.html">Landing</a></li>
         <li><a href="Home.html">Home</a></li>
         <li><a href="history.html">History</a></li>
         <li><a href="epl.html">EPL</a></li>
         <li><a href="rules.html">Rules</a></li>
         <li><a href="predict.html">Predict</a></li>
-        <li><a href="stats.html">All-Time Stats</a></li>
+        <li><a href="stats.html">Stats</a></li>
         <li><a href="quiz.html">Quiz</a></li>
         <li><a href="Contact.html">Contact</a></li>
       </ul>
@@ -138,45 +127,40 @@
   </header>
 
   <main>
-    <h1>Predict the Premier League</h1>
+    <h1>Predict the Premier League 2025/26</h1>
+
     <form id="predictionForm">
-      <label for="winner">🏆 Who will win the league?</label>
-      <input list="teams" id="winner" name="winner" placeholder="Enter team name" required>
+      <label for="winner">🏆 League Winner</label>
+      <select id="winner" required>
+        <option value="">-- Select a team --</option>
+        <option>Arsenal</option>
+        <option>Aston Villa</option>
+        <option>Chelsea</option>
+        <option>Liverpool</option>
+        <option>Manchester City</option>
+        <option>Manchester United</option>
+        <option>Tottenham Hotspur</option>
+        <option>Newcastle United</option>
+        <option>West Ham United</option>
+        <option>Other</option>
+      </select>
 
-      <label for="top4">🔝 Top 4 teams (comma-separated)</label>
-      <input type="text" id="top4" name="top4" placeholder="e.g. Man City, Arsenal, Liverpool, Chelsea" required>
+      <label for="top4">🔝 Top 4 (comma-separated)</label>
+      <input id="top4" placeholder="e.g. Man City, Arsenal, Liverpool, Chelsea" required>
 
-      <label for="relegated">🔻 Relegated teams (comma-separated)</label>
-      <input type="text" id="relegated" name="relegated" placeholder="e.g. Luton, Burnley, Forest" required>
+      <label for="relegated">🔻 Relegated Teams (comma-separated)</label>
+      <input id="relegated" placeholder="e.g. Luton, Burnley, Forest" required>
 
       <label for="topScorer">⚽ Top Scorer</label>
-      <input list="scorers" id="topScorer" name="topScorer" placeholder="Enter player name" required>
+      <input id="topScorer" placeholder="Enter player name" required>
 
       <button type="submit">Submit Prediction</button>
       <button type="button" id="clearPrediction">Clear Prediction</button>
     </form>
 
-    <div class="success" id="successMessage" style="display: none;">🎉 Prediction Saved!</div>
-
-    <div class="output" id="result" style="display: none;"></div>
-
-    <datalist id="teams">
-      <option value="Arsenal">
-      <option value="Manchester City">
-      <option value="Liverpool">
-      <option value="Chelsea">
-      <option value="Manchester United">
-      <option value="Tottenham">
-      <option value="Newcastle">
-      <option value="Aston Villa">
-    </datalist>
-
-    <datalist id="scorers">
-      <option value="Erling Haaland">
-      <option value="Mohamed Salah">
-      <option value="Harry Kane">
-      <option value="Son Heung-min">
-    </datalist>
+    <div id="successMessage" class="success" style="display:none;"></div>
+    <div id="result" class="output" style="display:none;"></div>
+    <div id="communityStats" class="output" style="display:none;"></div>
   </main>
 
   <script src="../script/predict.js"></script>
