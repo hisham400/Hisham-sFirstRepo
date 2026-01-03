@@ -3,28 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="stylex.css" />
+  <title>EPL Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url('../img/landing.webp') no-repeat center center/cover;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .landing-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .landing-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .landing-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    .landing-content a.button {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .landing-content a.button:hover {
+      background-color: #e6b800;
+    }
+  </style>
 </head>
 <body>
-  <header class="main-header">
-    <nav class="navbar">
-      <ul class="nav-menu">
-        <li><a href="landing.html">Landing Page</a></li>
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="history.html">History</a></li>
-        <li><a href="epl.html">EPL</a></li>
-        <li><a href="rules.html">Rules</a></li>
-        <li><a href="predict.html">Predict</a></li>
-        <li><a href="stats.html">All Time Stats</a></li>
-        <li><a href="Contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
+  <div class="overlay"></div>
 
+  <div class="landing-content">
+    <h1>Welcome to the Premier League</h1>
 
+    <a href="Home.html" class="button">Go to Home</a>
+  </div>
 
-  <script src="reyaan.js"></script>
 </body>
 </html>
